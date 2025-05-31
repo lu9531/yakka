@@ -1,0 +1,22 @@
+.container-progress-bar{
+    width: 100%;
+
+    .progress-bar {
+        width: 100%;
+        height: .7rem;
+        border-radius: 2rem;
+        background-color: var(--text-muted);
+
+        .bar {
+            height: 100%;
+            border-radius: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: .6rem;
+            background-color: var(--accent-primary);
+            color: #ffffff;
+            transition: width 0.3s ease-in-out;
+        }
+    }
+}

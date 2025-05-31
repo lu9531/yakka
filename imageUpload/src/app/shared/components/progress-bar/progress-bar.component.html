@@ -1,0 +1,9 @@
+<div class="container-progress-bar">
+    <div class="progress-bar">
+        <div class="bar" [ngStyle]="{ width: totalProgress() + '%' }">
+            @if (totalProgress() > 20) {
+            <p>{{ totalProgress() }} %</p>
+            }
+        </div>
+    </div>
+</div>

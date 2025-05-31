@@ -1,0 +1,142 @@
+/* Componente principal de descarga de Excel */
+.excel-download-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    animation: fadeInLeft 0.4s ease forwards;
+    opacity: 0;
+}
+
+.excel-download-item {
+    background: var(--upload-bg);
+    border: 0.0625rem solid var(--upload-border);
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.excel-download-item:hover {
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.5rem 1.25rem var(--shadow-light);
+    border-color: var(--excel-color);
+    background: var(--hover-bg);
+}
+
+.excel-download-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(33, 115, 70, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.excel-download-item:hover::before {
+    left: 100%;
+}
+
+.excel-icon {
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(45deg, var(--excel-color), #34d399);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.excel-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.excel-title {
+    font-size: .9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.excel-description {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+}
+
+.excel-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+}
+
+.excel-size {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.excel-date {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.excel-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.excel-download-btn {
+    background: var(--excel-color);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.excel-download-btn:hover {
+    background: #1a5f3f;
+    transform: translateY(-0.0625rem);
+}
+
+.excel-preview-btn {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 0.0625rem solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.excel-preview-btn:hover {
+    color: var(--accent-primary);
+    border-color: var(--accent-primary);
+    background: var(--upload-bg);
+}

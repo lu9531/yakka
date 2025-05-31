@@ -1,0 +1,84 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --bg-primary: #f8f4ff;
+    --bg-secondary: #ffffff;
+    --bg-gradient-start: #a855f7 ;
+    --bg-gradient-end: #025e6c;
+    --bg-danger: #ee3838;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --text-muted: #9ca3af;
+    --accent-primary: #8b5cf6;
+    --accent-secondary: #a855f7;
+    --border-color: #e5e7eb;
+    --border-dashed: #d1d5db;
+    --success-color: #10b981;
+    --excel-color: #217346;
+    --shadow-light: rgba(139, 92, 246, 0.1);
+    --card-bg: #ffffff;
+    --upload-bg: #f9fafb;
+    --upload-border: #e5e7eb;
+    --processing-bg: #f3f4f6;
+    --icon-bg: #f3f4f6;
+}
+
+[data-theme="dark"] {
+    --bg-primary: #0f0f23;
+    --bg-secondary: #1a1a2e;
+    --bg-gradient-start: #16213e;
+    --bg-gradient-end: #0f3460;
+    --bg-danger: #ee3838;
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
+    --text-muted: #9ca3af;
+    --accent-primary: #8b5cf6;
+    --accent-secondary: #a855f7;
+    --border-color: #374151;
+    --border-dashed: #4b5563;
+    --success-color: #10b981;
+    --excel-color: #34d399;
+    --shadow-light: rgba(139, 92, 246, 0.2);
+    --card-bg: #1f2937;
+    --upload-bg: #111827;
+    --upload-border: #374151;
+    --processing-bg: #1f2937;
+    --icon-bg: #374151;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
