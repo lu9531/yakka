@@ -6,10 +6,11 @@ import { ProgressBarService } from '../../shared/services/progress-bar.service';
 
 import { ProgressBarComponent } from './../../shared/components/progress-bar/progress-bar.component';
 import { ExcelDownloadComponent } from '../../shared/components/excel-download/excel-download.component';
+import { CameraCaptureComponent } from '../camera-capture/camera-capture.component';
 
 @Component({
   selector: 'app-imageupload',
-  imports: [CommonModule, ProgressBarComponent, ExcelDownloadComponent, ReactiveFormsModule, FormsModule],
+  imports: [CommonModule, ProgressBarComponent, ExcelDownloadComponent, ReactiveFormsModule, FormsModule, CameraCaptureComponent],
   templateUrl: './imageupload.component.html',
   styleUrl: './imageupload.component.scss',
 })
@@ -22,7 +23,7 @@ export class ImageuploadComponent implements OnInit {
   canDownload: boolean = false;
   totalProgress: number = 0;
   theme: string = 'light';
-  inputFile:any;
+  inputFile: any;
 
   ngOnInit(): void {
     this.theme = localStorage.getItem('theme') ?? 'light';
@@ -41,7 +42,7 @@ export class ImageuploadComponent implements OnInit {
 
 
   onDragOver(event: DragEvent): void {
-    event.preventDefault(); 
+    event.preventDefault();
     this.isDragging = true;
   }
 
@@ -79,13 +80,14 @@ export class ImageuploadComponent implements OnInit {
       this.attachedFiles.splice(index, 1);
     }
 
-    if(this.attachedFiles.length === 0){
+    if (this.attachedFiles.length === 0) {
       this.canDownload = false;
       this.totalProgress = 0;
     }
   }
 
   analyzeFiles() {
+    this.canDownload = false;
     this._progressBarService.startProgress();
 
     setTimeout(() => {

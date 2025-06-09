@@ -1,0 +1,289 @@
+ .camera-card {
+     background: var(--card-bg);
+     border-radius: 16px;
+     padding: 24px;
+     border: 1px solid var(--border-color);
+     box-shadow: 0 4px 6px var(--shadow-light);
+     max-width: 600px;
+     margin: 0 auto;
+     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+ }
+
+ .card-header {
+     display: flex;
+     justify-content: space-between;
+     align-items: flex-start;
+     margin-bottom: 24px;
+     position: relative;
+ }
+
+ .card-title {
+     font-size: 20px;
+     font-weight: 600;
+     color: var(--text-primary);
+     margin: 0 0 4px 0;
+ }
+
+ .card-subtitle {
+     font-size: 14px;
+     color: var(--text-secondary);
+     margin: 0;
+ }
+
+ .settings-btn {
+     position: absolute;
+     top: 0;
+     right: 0;
+     background: var(--accent-primary);
+     border: none;
+     border-radius: 12px;
+     width: 48px;
+     height: 48px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: white;
+     cursor: pointer;
+     transition: all 0.2s ease;
+ }
+
+ .settings-btn:hover {
+     background: var(--accent-secondary);
+     transform: scale(1.05);
+ }
+
+ .camera-zone {
+     background: var(--upload-bg);
+     border: 2px dashed var(--border-dashed);
+     border-radius: 12px;
+     min-height: 300px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-bottom: 20px;
+     position: relative;
+     overflow: hidden;
+ }
+
+ .camera-placeholder {
+     text-align: center;
+     padding: 40px 20px;
+ }
+
+ .camera-icon {
+     background: var(--accent-primary);
+     border-radius: 16px;
+     width: 80px;
+     height: 80px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin: 0 auto 16px;
+     color: white;
+ }
+
+ .camera-placeholder h4 {
+     font-size: 16px;
+     font-weight: 500;
+     color: var(--text-primary);
+     margin: 0 0 4px 0;
+ }
+
+ .camera-placeholder p {
+     font-size: 14px;
+     color: var(--text-secondary);
+     margin: 0;
+ }
+
+ .camera-video {
+     width: 100%;
+     height: auto;
+     max-height: 400px;
+     border-radius: 8px;
+ }
+
+ .captured-preview {
+     width: 100%;
+     display: flex;
+     justify-content: center;
+ }
+
+ .captured-preview img {
+     max-width: 100%;
+     max-height: 400px;
+     border-radius: 8px;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+ }
+
+ .camera-controls {
+     display: flex;
+     gap: 12px;
+     justify-content: center;
+     margin-bottom: 24px;
+ }
+
+ .btn-primary {
+     background: var(--accent-primary);
+     color: white;
+     border: none;
+     border-radius: 12px;
+     padding: 12px 24px;
+     font-size: 14px;
+     font-weight: 500;
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     gap: 8px;
+     transition: all 0.2s ease;
+ }
+
+ .btn-primary:hover {
+     background: var(--accent-secondary);
+     transform: translateY(-1px);
+ }
+
+ .btn-secondary {
+     background: var(--processing-bg);
+     color: var(--text-secondary);
+     border: 1px solid var(--border-color);
+     border-radius: 12px;
+     padding: 12px 24px;
+     font-size: 14px;
+     font-weight: 500;
+     cursor: pointer;
+     transition: all 0.2s ease;
+ }
+
+ .btn-secondary:hover {
+     background: var(--icon-bg);
+ }
+
+ .photos-section {
+     border-top: 1px solid var(--border-color);
+     padding-top: 20px;
+ }
+
+ .section-header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin-bottom: 16px;
+ }
+
+ .section-header h4 {
+     font-size: 16px;
+     font-weight: 600;
+     color: var(--text-primary);
+     margin: 0;
+ }
+
+ .btn-analyze {
+     background: var(--accent-primary);
+     color: white;
+     border: none;
+     border-radius: 8px;
+     padding: 8px 16px;
+     font-size: 14px;
+     font-weight: 500;
+     cursor: pointer;
+     transition: all 0.2s ease;
+ }
+
+ .btn-analyze:hover {
+     background: var(--accent-secondary);
+ }
+
+ .photo-item {
+     background: var(--processing-bg);
+     border-radius: 12px;
+     padding: 16px;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+ }
+
+ .photo-info {
+     display: flex;
+     align-items: center;
+     gap: 12px;
+ }
+
+ .photo-icon {
+     background: var(--accent-primary);
+     border-radius: 8px;
+     width: 40px;
+     height: 40px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: white;
+ }
+
+ .photo-details {
+     display: flex;
+     flex-direction: column;
+ }
+
+ .photo-name {
+     font-size: 14px;
+     font-weight: 500;
+     color: var(--text-primary);
+ }
+
+ .photo-size {
+     font-size: 12px;
+     color: var(--text-secondary);
+ }
+
+ .delete-btn {
+     background: none;
+     border: none;
+     color: var(--text-muted);
+     cursor: pointer;
+     padding: 8px;
+     border-radius: 6px;
+     transition: all 0.2s ease;
+ }
+
+ .delete-btn:hover {
+     background: var(--bg-danger);
+     color: white;
+ }
+
+ .error-message {
+     background: var(--bg-danger);
+     color: white;
+     padding: 12px 16px;
+     border-radius: 8px;
+     font-size: 14px;
+     margin-top: 16px;
+ }
+
+ /* Responsive */
+ @media (max-width: 768px) {
+     .camera-card {
+         padding: 20px;
+         margin: 16px;
+     }
+
+     .camera-controls {
+         flex-direction: column;
+         align-items: center;
+     }
+
+     .btn-primary,
+     .btn-secondary {
+         width: 100%;
+         justify-content: center;
+     }
+
+     .section-header {
+         flex-direction: column;
+         align-items: flex-start;
+         gap: 12px;
+     }
+
+     .btn-analyze {
+         width: 100%;
+     }
+ }

@@ -2,7 +2,7 @@
 :root {
     --bg-primary: #f8f4ff;
     --bg-secondary: #ffffff;
-    --bg-gradient-start: #a855f7 ;
+    --bg-gradient-start: #a855f7;
     --bg-gradient-end: #025e6c;
     --bg-danger: #ee3838;
     --text-primary: #1f2937;
@@ -52,7 +52,8 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Raleway', sans-serif;
     min-height: 100vh;
     color: var(--text-primary);
     transition: all 0.3s ease;
@@ -81,4 +82,3 @@ body {
         transform: translateY(0);
     }
 }
-
