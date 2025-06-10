@@ -1,3 +1,4 @@
+
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -6,11 +7,12 @@ import { ProgressBarService } from '../../shared/services/progress-bar.service';
 
 import { ProgressBarComponent } from './../../shared/components/progress-bar/progress-bar.component';
 import { ExcelDownloadComponent } from '../../shared/components/excel-download/excel-download.component';
-import { CameraCaptureComponent } from '../camera-capture/camera-capture.component';
+import { RouterModule } from '@angular/router';
+import { MenuComponent } from '../menu/menu.component';
 
 @Component({
   selector: 'app-imageupload',
-  imports: [CommonModule, ProgressBarComponent, ExcelDownloadComponent, ReactiveFormsModule, FormsModule, CameraCaptureComponent],
+  imports: [CommonModule, ProgressBarComponent, ExcelDownloadComponent, ReactiveFormsModule, FormsModule, RouterModule, MenuComponent],
   templateUrl: './imageupload.component.html',
   styleUrl: './imageupload.component.scss',
 })

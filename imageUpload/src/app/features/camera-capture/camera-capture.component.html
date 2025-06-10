@@ -1,105 +1,87 @@
-<div class="camera-card">
-    <div class="card-header">
-        <h3 class="card-title">Capturar Foto</h3>
-        <p class="card-subtitle">Comience tomando fotos para procesarlas.</p>
-        <button class="settings-btn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-            </svg>
-        </button>
-    </div>
+<div class="container">
 
-    <!-- Zona de cámara -->
-    <div class="camera-zone">
-        @if (!isStreaming() && !capturedPhoto()) {
-        <div class="camera-placeholder">
-            <div class="camera-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                        d="M12 2l3.09 2.26L18 2h3v3l-2.26 2.91L21 11v2l-2.26 2.91L21 19v3h-3l-2.91-2.26L12 22l-2.09-1.74L7 22H4v-3l2.26-2.91L3 13v-2l2.26-2.91L3 5V2h3l2.91 2.26L12 2z" />
-                </svg>
-            </div>
-            <h4>Activar cámara para tomar fotos</h4>
-            <p>o busque archivos</p>
-        </div>
-        }
-
-        <video #videoElement [style.display]="isStreaming() ? 'block' : 'none'" class="camera-video" autoplay
-            playsinline>
-        </video>
-
-        @if (capturedPhoto()) {
-        <div class="captured-preview">
-            <img [src]="capturedPhoto()" alt="Foto capturada" />
-        </div>
-        }
-    </div>
-
-    <!-- Canvas oculto -->
-    <canvas #canvasElement style="display: none;"></canvas>
-
-    <!-- Controles -->
-    <div class="camera-controls">
-        @if (!isStreaming() && !capturedPhoto()) {
-        <button (click)="startCamera()" class="btn-primary">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                    d="M12 2l3.09 2.26L18 2h3v3l-2.26 2.91L21 11v2l-2.26 2.91L21 19v3h-3l-2.91-2.26L12 22l-2.09-1.74L7 22H4v-3l2.26-2.91L3 13v-2l2.26-2.91L3 5V2h3l2.91 2.26L12 2z" />
-            </svg>
-            Activar Cámara
-        </button>
-        }
-
-        @if (isStreaming()) {
-        <button (click)="takePhoto()" class="btn-primary">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <circle cx="12" cy="12" r="3" />
-                <path
-                    d="M12 2l3.09 2.26L18 2h3v3l-2.26 2.91L21 11v2l-2.26 2.91L21 19v3h-3l-2.91-2.26L12 22l-2.09-1.74L7 22H4v-3l2.26-2.91L3 13v-2l2.26-2.91L3 5V2h3l2.91 2.26L12 2z" />
-            </svg>
-            Tomar Foto
-        </button>
-        <button (click)="stopCamera()" class="btn-secondary">
-            Detener
-        </button>
-        }
-    </div>
-
-    <!-- Fotos capturadas -->
-    @if (capturedPhoto()) {
-    <div class="photos-section">
-        <div class="section-header">
-            <h4>Fotos capturadas</h4>
-            <button (click)="processPhotos()" class="btn-analyze">Analizar</button>
+    <div class="camera-card">
+        <div class="card-header">
+            <h3 class="card-title">Capturar Foto</h3>
         </div>
 
-        <div class="photo-item">
-            <div class="photo-info">
-                <div class="photo-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <div class="camera-zone">
+            @if (!isStreaming() && !capturedPhoto()) {
+            <div class="camera-placeholder">
+                <div class="camera-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"
+                        class="bi bi-camera" viewBox="0 0 16 16">
                         <path
-                            d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+                            d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4z" />
+                        <path
+                            d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5m0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7M3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0" />
                     </svg>
                 </div>
-                <div class="photo-details">
-                    <span class="photo-name">foto_capturada.jpg</span>
-                    <span class="photo-size">Peso: {{ getPhotoSize() }}</span>
+                <h4>Activar cámara para tomar fotos</h4>
+            </div>
+            }
+
+            <video #videoElement [style.display]="isStreaming() ? 'block' : 'none'" class="camera-video" autoplay
+                playsinline>
+            </video>
+
+            <!-- @if (capturedPhoto()) {
+            <div class="captured-preview">
+                <img [src]="capturedPhoto()" alt="Foto capturada" />
+            </div>
+            } -->
+        </div>
+
+        <canvas #canvasElement style="display: none;"></canvas>
+
+        <div class="camera-controls">
+            @if (!isStreaming() && !capturedPhoto()) {
+            <button (click)="startCamera()" class="btn-primary">
+                Activar Cámara
+            </button>
+            }
+
+            @if (isStreaming()) {
+            <button (click)="takePhoto()" class="btn-primary">
+                Tomar Foto
+            </button>
+            <button (click)="stopCamera()" class="btn-secondary">
+                Detener
+            </button>
+            }
+        </div>
+
+        @if (capturedPhoto()) {
+        <div class="photos-section">
+            <div class="files-section">
+                <div class="files-header">
+                    <p class="files-title">Fotos capturadas</p>
+                    <button type="button" class="btn-analyze">Analizar</button>
+                </div>
+                <div class="file-list">
+                    <div class="file-item">
+                        <div class="file-icon">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <div class="file-info">
+                            <p class="file-name">foto_capturada.jpg</p>
+                            <p class="file-path">Peso: {{ getPhotoSize() }}</p>
+                        </div>
+                        <div class="file-action">
+                            <div class="file-action__item delete" (click)="clearPhoto()">
+                                <i class="fa-solid fa-trash"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <button (click)="clearPhoto()" class="delete-btn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z" />
-                </svg>
-            </button>
         </div>
-    </div>
-    }
+        }
 
-    <!-- Error message -->
-    @if (errorMessage()) {
-    <div class="error-message">
-        {{ errorMessage() }}
+        @if (errorMessage()) {
+        <div class="error-message">
+            {{ errorMessage() }}
+        </div>
+        }
     </div>
-    }
 </div>

@@ -1,4 +1,21 @@
 <div class="container">
+
+    <!-- <div class="menu">
+        <app-menu />
+    </div> -->
+
+    <div class="main-card menu">
+        <button class="control-btn theme-toggle" [routerLink]="['/capture']">
+            <i class="fa-solid fa-camera"></i>
+        </button>
+        <button class="control-btn theme-toggle" [routerLink]="['/upload']">
+            <i class="fa-solid fa-file-arrow-up"></i>
+        </button>
+        <button class="control-btn theme-toggle" (click)="setTheme()">
+            <i [class]="theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'"></i>
+        </button>
+    </div>
+
     <div class="main-card">
         <header class="header">
             <div class="titles">
@@ -6,9 +23,9 @@
                 <p class="section-subtitle">Comience agregando imágenes para procesarlas.</p>
             </div>
             <div class="controls">
-                <button class="control-btn theme-toggle" (click)="setTheme()">
+                <!-- <button class="control-btn theme-toggle" (click)="setTheme()">
                     <i [class]="theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'"></i>
-                </button>
+                </button> -->
             </div>
         </header>
 
@@ -22,18 +39,18 @@
                     <p>Arrastre y suelte sus imágenes aquí o </p> <span class="browse-link">busque archivos</span>
                 </div>
                 <input type="file" id="fileInput" multiple accept="image/*" style="display: none;" #inputFile
-                    (change)="onFileSelected($event)" name="inputFile" >
+                    (change)="onFileSelected($event)" name="inputFile">
             </div>
         </div>
 
         @if (attachedFiles.length > 0) {
 
         @if (totalProgress > 0) {
-        <app-progress-bar [totalProgress]="totalProgress"  />
+        <app-progress-bar [totalProgress]="totalProgress" />
         }
 
         @if (canDownload) {
-        <app-excel-download  />
+        <app-excel-download />
         }
         <div class="files-section">
             <div class="files-header">
@@ -62,7 +79,3 @@
         }
     </div>
 </div>
-
-<app-camera-capture></app-camera-capture>
-
-

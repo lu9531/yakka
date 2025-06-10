@@ -3,9 +3,11 @@
     min-height: 100vh;
     padding: 3rem 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 1rem;
     justify-content: center;
-    background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+    background: linear-gradient(135deg, var(--bg-primary), var(--upload-bg));
 }
 
 .main-card {
@@ -314,4 +316,14 @@
 
 .file-item:nth-child(5) {
     animation-delay: 0.5s;
+}
+
+
+.menu {
+    padding: .5rem;
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: .5rem;
 }

@@ -1,48 +1,94 @@
 /* You can add global styles to this file, and also import other style files */
+// :root {
+//     --bg-primary: #f8f4ff;
+//     --bg-secondary: #ffffff;
+//     --bg-gradient-start: #a855f7;
+//     --bg-gradient-end: #025e6c;
+//     --bg-danger: #ee3838;
+//     --text-primary: #1f2937;
+//     --text-secondary: #6b7280;
+//     --text-muted: #9ca3af;
+//     --accent-primary: #8b5cf6;
+//     --accent-secondary: #a855f7;
+//     --border-color: #e5e7eb;
+//     --border-dashed: #d1d5db;
+//     --success-color: #10b981;
+//     --excel-color: #217346;
+//     --shadow-light: rgba(139, 92, 246, 0.1);
+//     --card-bg: #ffffff;
+//     --upload-bg: #f9fafb;
+//     --upload-border: #e5e7eb;
+//     --processing-bg: #f3f4f6;
+//     --icon-bg: #f3f4f6;
+// }
+
 :root {
-    --bg-primary: #f8f4ff;
+    --bg-primary: #fff8f4;
     --bg-secondary: #ffffff;
-    --bg-gradient-start: #a855f7;
-    --bg-gradient-end: #025e6c;
+    --bg-gradient-start: #e0670e;
+    --bg-gradient-end: #604c3c;
     --bg-danger: #ee3838;
-    --text-primary: #1f2937;
-    --text-secondary: #6b7280;
-    --text-muted: #9ca3af;
-    --accent-primary: #8b5cf6;
-    --accent-secondary: #a855f7;
-    --border-color: #e5e7eb;
-    --border-dashed: #d1d5db;
+    --text-primary: #604c3c;
+    --text-secondary: #a0522d;
+    --text-muted: #bfa99c;
+    --accent-primary: #e0670e;
+    --accent-secondary: #b3540b;
+    --border-color: #e6dcd4;
+    --border-dashed: #d3c2b6;
     --success-color: #10b981;
     --excel-color: #217346;
-    --shadow-light: rgba(139, 92, 246, 0.1);
+    --shadow-light: rgba(224, 103, 14, 0.1);
     --card-bg: #ffffff;
-    --upload-bg: #f9fafb;
-    --upload-border: #e5e7eb;
-    --processing-bg: #f3f4f6;
-    --icon-bg: #f3f4f6;
+    --upload-bg: #fdf7f3;
+    --upload-border: #e6dcd4;
+    --processing-bg: #f8f1ec;
+    --icon-bg: #f8f1ec;
 }
 
+// [data-theme="dark"] {
+//     --bg-primary: #0f0f23;
+//     --bg-secondary: #1a1a2e;
+//     --bg-gradient-start: #16213e;
+//     --bg-gradient-end: #0f3460;
+//     --bg-danger: #ee3838;
+//     --text-primary: #f9fafb;
+//     --text-secondary: #d1d5db;
+//     --text-muted: #9ca3af;
+//     --accent-primary: #8b5cf6;
+//     --accent-secondary: #a855f7;
+//     --border-color: #374151;
+//     --border-dashed: #4b5563;
+//     --success-color: #10b981;
+//     --excel-color: #34d399;
+//     --shadow-light: rgba(139, 92, 246, 0.2);
+//     --card-bg: #1f2937;
+//     --upload-bg: #111827;
+//     --upload-border: #374151;
+//     --processing-bg: #1f2937;
+//     --icon-bg: #374151;
+// }
+
 [data-theme="dark"] {
-    --bg-primary: #0f0f23;
-    --bg-secondary: #1a1a2e;
-    --bg-gradient-start: #16213e;
-    --bg-gradient-end: #0f3460;
+    --bg-primary: #1b120d;
+    --bg-secondary: #2c1e17;
+    --bg-gradient-start: #604c3c;
+    --bg-gradient-end: #e0670e;
     --bg-danger: #ee3838;
-    --text-primary: #f9fafb;
-    --text-secondary: #d1d5db;
-    --text-muted: #9ca3af;
-    --accent-primary: #8b5cf6;
-    --accent-secondary: #a855f7;
-    --border-color: #374151;
-    --border-dashed: #4b5563;
+    --text-primary: #fdf6f0;
+    --text-secondary: #e5c8b0;
+    --text-muted: #b08a6f;
+    --accent-primary: #e0670e;
+    --accent-secondary: #a94f0c;
+    --border-color: #5a4134;
+    --border-dashed: #7a5b4b;
     --success-color: #10b981;
     --excel-color: #34d399;
-    --shadow-light: rgba(139, 92, 246, 0.2);
-    --card-bg: #1f2937;
-    --upload-bg: #111827;
-    --upload-border: #374151;
-    --processing-bg: #1f2937;
-    --icon-bg: #374151;
+    --shadow-light: rgba(224, 103, 14, 0.2);
+    --card-bg: #2c1e17;
+    --upload-bg: #1f1510;
+    --upload-border: #5a4134;
+    --processing-bg: #2b1c14;
+    --icon-bg: #3a2920;
 }
 
 * {
@@ -52,7 +98,6 @@
 }
 
 body {
-    // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-family: 'Raleway', sans-serif;
     min-height: 100vh;
     color: var(--text-primary);
