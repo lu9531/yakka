@@ -2,5 +2,11 @@
     <button class="control-btn theme-toggle" [routerLink]="['/capture']">
         <i class="fa-solid fa-camera"></i>
     </button>
+    <button class="control-btn theme-toggle" [routerLink]="['/upload']">
+        <i class="fa-solid fa-file-arrow-up"></i>
+    </button>
+    <button class="control-btn theme-toggle" (click)="setTheme()">
+        <i [class]="theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'"></i>
+    </button>
 
 </div>

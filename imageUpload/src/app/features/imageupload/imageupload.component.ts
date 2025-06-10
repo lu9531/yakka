@@ -24,12 +24,9 @@ export class ImageuploadComponent implements OnInit {
   isDragging: boolean = false;
   canDownload: boolean = false;
   totalProgress: number = 0;
-  theme: string = 'light';
   inputFile: any;
 
   ngOnInit(): void {
-    this.theme = localStorage.getItem('theme') ?? 'light';
-    document.documentElement.setAttribute('data-theme', this.theme);
     this._progressBarService.getProgress().subscribe(value => this.totalProgress = value);
   }
 
@@ -100,11 +97,5 @@ export class ImageuploadComponent implements OnInit {
     }, 3000);
   }
 
-  setTheme() {
-    const theme = this.theme === 'light' ? 'dark' : 'light';
-    this.theme = theme;
-    localStorage.setItem('theme', this.theme)
-    document.documentElement.setAttribute('data-theme', this.theme);
-  }
 
 }

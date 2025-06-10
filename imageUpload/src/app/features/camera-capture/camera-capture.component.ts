@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, signal, ViewChild } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { MenuComponent } from '../menu/menu.component';
 
 @Component({
   selector: 'app-camera-capture',
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, MenuComponent],
   templateUrl: './camera-capture.component.html',
   styleUrl: './camera-capture.component.scss'
 })
@@ -77,7 +78,6 @@ export class CameraCaptureComponent {
   }
 
   processPhotos(): void {
-    // Lógica para procesar las fotos
     console.log('Procesando fotos...');
   }
 

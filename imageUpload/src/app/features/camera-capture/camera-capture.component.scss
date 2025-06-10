@@ -19,7 +19,7 @@
     width: 100%;
     max-width: 43.75rem;
     margin: 0 auto;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    animation: slideUp 0.6s ease;
 }
 
 .card-header {
@@ -75,6 +75,29 @@
     margin-bottom: 20px;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.camera-zone:hover {
+    border-color: var(--accent-primary);
+    background: var(--upload-bg);
+    transform: translateY(-0.125rem);
+}
+
+.camera-zone::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.camera-zone:hover::before {
+    left: 100%;
 }
 
 .camera-placeholder {
@@ -181,6 +204,7 @@
     .camera-card {
         padding: 20px;
         margin: 16px;
+        width: max-content;
     }
 
     .camera-controls {
@@ -226,7 +250,7 @@
 
 .btn-analyze {
     padding: .5rem 2rem;
-    background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+    background: var(--accent-primary);
     color: #ffffff;
     border: 0;
     border-radius: .4rem;
@@ -321,4 +345,3 @@
     color: var(--text-secondary);
     cursor: pointer;
 }
-
